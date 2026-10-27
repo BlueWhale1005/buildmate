@@ -1,0 +1,6 @@
+{
+  "name": "JC Contractor Hub - Jersey City Home Improvement & Contractor Network",
+  "description": "Connecting Jersey City homeowners, trusted local contractors, and material suppliers with dependable help, digital contractor services, AI renovation concepts, and direct hiring.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
