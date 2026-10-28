@@ -24,6 +24,7 @@ export const ConstructionPage: React.FC<ConstructionPageProps> = ({
   const [message, setMessage] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
   const constructionServices = [
     {
@@ -90,9 +91,10 @@ export const ConstructionPage: React.FC<ConstructionPageProps> = ({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError('');
     setSubmitting(true);
     try {
-      await fetch('/api/contact', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -105,9 +107,13 @@ export const ConstructionPage: React.FC<ConstructionPageProps> = ({
           urgency: 'routine',
         }),
       });
+      const result = await response.json();
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || 'We could not send your inquiry. Please try again.');
+      }
       setSubmitted(true);
-    } catch {
-      setSubmitted(true);
+    } catch (submitError) {
+      setError(submitError instanceof Error ? submitError.message : 'We could not send your inquiry. Please try again.');
     } finally {
       setSubmitting(false);
     }
@@ -325,6 +331,7 @@ export const ConstructionPage: React.FC<ConstructionPageProps> = ({
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
+              {error && <p className="border border-red-200 bg-red-50 p-3 text-sm text-red-700" role="alert">{error}</p>}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">

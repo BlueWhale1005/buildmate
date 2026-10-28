@@ -120,11 +120,11 @@ export const Footer: React.FC<FooterProps> = ({
 
             <div>
               <a
-                href="mailto:dispatch@buildmate.com"
+                href="mailto:Info@buildmateusa.com"
                 className="hover:text-white transition-colors flex items-center gap-2"
               >
                 <Mail className="w-4 h-4 text-slate-400" />
-                <span>dispatch@buildmate.com</span>
+                <span>Info@buildmateusa.com</span>
               </a>
             </div>
 

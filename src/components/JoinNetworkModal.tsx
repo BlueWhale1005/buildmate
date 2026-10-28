@@ -16,14 +16,16 @@ export const JoinNetworkModal: React.FC<JoinNetworkModalProps> = ({ isOpen, onCl
   const [licenseNumber, setLicenseNumber] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [error, setError] = useState('');
 
   if (!isOpen) return null;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError('');
     setSubmitting(true);
     try {
-      await fetch('/api/contact', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -36,9 +38,13 @@ export const JoinNetworkModal: React.FC<JoinNetworkModalProps> = ({ isOpen, onCl
           message: `Network application: ${role.toUpperCase()}. Trade/Products: ${tradeOrProducts}. NJ License/Reg: ${licenseNumber || 'Pending verification'}`,
         }),
       });
+      const result = await response.json();
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || 'We could not submit your application. Please try again.');
+      }
       setSuccess(true);
-    } catch {
-      setSuccess(true);
+    } catch (submitError) {
+      setError(submitError instanceof Error ? submitError.message : 'We could not submit your application. Please try again.');
     } finally {
       setSubmitting(false);
     }
@@ -91,6 +97,7 @@ export const JoinNetworkModal: React.FC<JoinNetworkModalProps> = ({ isOpen, onCl
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="p-6 sm:p-8 space-y-4">
+            {error && <p className="border border-red-200 bg-red-50 p-3 text-sm text-red-700" role="alert">{error}</p>}
             {/* Role switch */}
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-slate-800 mb-1.5">

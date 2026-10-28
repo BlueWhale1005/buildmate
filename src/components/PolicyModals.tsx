@@ -52,7 +52,7 @@ export const PolicyModals: React.FC<PolicyModalProps> = ({ type, language, onClo
                 </p>
                 <h4 className="font-bold text-slate-900">Contacto</h4>
                 <p>
-                  Para consultas sobre privacidad o eliminación de datos, escríbanos a <em>dispatch@buildmate.com</em> o llame al <em>(201) 555-0198</em>.
+                  Para consultas sobre privacidad o eliminación de datos, escríbanos a <em>Info@buildmateusa.com</em> o llame al <em>(201) 555-0198</em>.
                 </p>
               </>
             ) : (
@@ -70,7 +70,7 @@ export const PolicyModals: React.FC<PolicyModalProps> = ({ type, language, onClo
                 </p>
                 <h4 className="font-bold text-slate-900">Contact Us</h4>
                 <p>
-                  For questions regarding data privacy or to request removal of your details, please email us directly at <em>dispatch@buildmate.com</em> or call <em>(201) 555-0198</em>.
+                  For questions regarding data privacy or to request removal of your details, please email us directly at <em>Info@buildmateusa.com</em> or call <em>(201) 555-0198</em>.
                 </p>
               </>
             )

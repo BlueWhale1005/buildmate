@@ -61,16 +61,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ language, initia
       } else {
         setErrorMsg(data.error || 'Failed to submit inquiry. Please call us directly.');
       }
-    } catch (err: any) {
-      console.warn('Network submission fallback:', err);
-      setSubmissionSuccess({
-        success: true,
-        referenceId: `BM-${Date.now().toString(36).toUpperCase()}`,
-        message: language === 'es' 
-          ? '¡Gracias! Su consulta ha sido recibida. Nuestro equipo de despacho de BuildMate se comunicará pronto.'
-          : 'Thank you! Your inquiry has been received. Our BuildMate dispatch team will contact you shortly.',
-        directPhone: '(201) 555-0198',
-      });
+    } catch (err) {
+      setErrorMsg(err instanceof Error
+        ? err.message
+        : (language === 'es' ? 'No pudimos enviar su consulta. Inténtelo de nuevo.' : 'We could not send your inquiry. Please try again.'));
     } finally {
       setSubmitting(false);
     }
@@ -105,7 +99,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ language, initia
 
           {/* Card 2: Email */}
           <a
-            href="mailto:dispatch@buildmate.com"
+            href="mailto:Info@buildmateusa.com"
             className="group bg-white p-5 border border-slate-200 hover:border-slate-400 hover:shadow-md transition-all flex items-start gap-4"
           >
             <div className="w-10 h-10 rounded-lg bg-slate-100 group-hover:bg-slate-200 text-slate-800 flex items-center justify-center shrink-0 transition-colors">
@@ -116,7 +110,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ language, initia
                 {language === 'es' ? 'Correo Electrónico' : 'Email Inquiries'}
               </div>
               <div className="text-base font-bold text-slate-950 group-hover:text-slate-800 transition-colors">
-                dispatch@buildmate.com
+                Info@buildmateusa.com
               </div>
               <div className="text-xs text-slate-500 mt-0.5">
                 {language === 'es' ? 'Respuesta rápida en 2 horas' : 'Fast response within 2 hours'}
@@ -166,11 +160,15 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ language, initia
                   {t.successTitle}
                 </h4>
                 <p className="text-sm text-slate-700 max-w-md mx-auto leading-relaxed">
-                  {submissionSuccess.message}
+                  {submissionSuccess.message || (language === 'es'
+                    ? '¡Gracias! Su consulta se envió correctamente. Nuestro equipo de BuildMate se comunicará pronto.'
+                    : 'Thank you! Your inquiry was sent successfully. Our BuildMate team will contact you shortly.')}
                 </p>
-                <div className="px-3 py-1.5 bg-white text-xs text-slate-600 border border-emerald-200 inline-block font-mono">
-                  Ref ID: <strong className="text-slate-950">{submissionSuccess.referenceId}</strong>
-                </div>
+                {submissionSuccess.referenceId && (
+                  <div className="px-3 py-1.5 bg-white text-xs text-slate-600 border border-emerald-200 inline-block font-mono">
+                    Ref ID: <strong className="text-slate-950">{submissionSuccess.referenceId}</strong>
+                  </div>
+                )}
 
                 <div className="pt-3 border-t border-emerald-100 flex flex-col sm:flex-row items-center justify-center gap-3">
                   <a

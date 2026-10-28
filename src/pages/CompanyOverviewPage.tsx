@@ -386,9 +386,9 @@ export const CompanyOverviewPage: React.FC<CompanyOverviewPageProps> = ({ langua
                   <span className="grid h-10 w-10 place-items-center border border-white/25"><Phone size={17} /></span>
                   <span><span className="block text-xs font-medium text-white/55">{copy.phoneCta}</span>(201) 555-0198</span>
                 </a>
-                <a href="mailto:dispatch@buildmate.com" className="flex items-center gap-4 text-sm font-semibold transition-colors hover:text-[var(--lime)]">
+                <a href="mailto:Info@buildmateusa.com" className="flex items-center gap-4 text-sm font-semibold transition-colors hover:text-[var(--lime)]">
                   <span className="grid h-10 w-10 place-items-center border border-white/25"><Mail size={17} /></span>
-                  <span><span className="block text-xs font-medium text-white/55">{copy.emailCta}</span>dispatch@buildmate.com</span>
+                  <span><span className="block text-xs font-medium text-white/55">{copy.emailCta}</span>Info@buildmateusa.com</span>
                 </a>
               </div>
             </div>
@@ -427,7 +427,7 @@ export const CompanyOverviewPage: React.FC<CompanyOverviewPageProps> = ({ langua
                   </label>
                   {error && (
                     <p className="sm:col-span-2 border-l-2 border-[var(--lime)] pl-3 text-sm leading-6 text-white/80" role="alert">
-                      <strong className="block text-white">{copy.errorTitle}</strong>{error} {copy.errorFallback} <a className="font-semibold text-[var(--lime)] underline" href="mailto:dispatch@buildmate.com">dispatch@buildmate.com</a>
+                      <strong className="block text-white">{copy.errorTitle}</strong>{error} {copy.errorFallback} <a className="font-semibold text-[var(--lime)] underline" href="mailto:Info@buildmateusa.com">Info@buildmateusa.com</a>
                     </p>
                   )}
                   <div className="sm:col-span-2">

@@ -13,7 +13,7 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
-const contactEmail = process.env.CONTACT_EMAIL || 'dispatch@buildmate.com';
+const contactEmail = process.env.CONTACT_EMAIL || 'Info@buildmateusa.com';
 const mailTransport = process.env.SMTP_HOST
   ? nodemailer.createTransport({
       host: process.env.SMTP_HOST,
@@ -47,15 +47,22 @@ app.post('/api/contact', async (req: Request, res: Response) => {
   const serviceCategory = typeof req.body.serviceCategory === 'string' ? req.body.serviceCategory.trim() : '';
   const message = typeof req.body.message === 'string' ? req.body.message.trim() : '';
 
-  if (!name || !email || !message || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+  if (
+    !name || name.length > 120 ||
+    (!email && !phone) ||
+    (email && (email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))) ||
+    phone.length > 40 || serviceCategory.length > 160 || message.length > 5000
+  ) {
     return res.status(400).json({
       success: false,
-      error: 'Please provide your name, a valid email address, and a message.',
+      error: 'Please provide your name, a valid email address or phone number, and a message.',
     });
   }
 
   const fromAddress = process.env.SMTP_FROM || process.env.SMTP_USER;
-  if (!mailTransport || !fromAddress) {
+  const hasSmtpUser = Boolean(process.env.SMTP_USER);
+  const hasSmtpPass = Boolean(process.env.SMTP_PASS);
+  if (!mailTransport || !fromAddress || hasSmtpUser !== hasSmtpPass) {
     return res.status(503).json({
       success: false,
       error: 'The contact form is not configured to send email yet.',
@@ -66,7 +73,7 @@ app.post('/api/contact', async (req: Request, res: Response) => {
     await mailTransport.sendMail({
       from: fromAddress,
       to: contactEmail,
-      replyTo: email,
+      ...(email ? { replyTo: email } : {}),
       subject: `BuildMate inquiry${serviceCategory ? `: ${serviceCategory}` : ''}`,
       text: [
         `Name: ${name}`,
@@ -131,7 +138,9 @@ app.post('/api/project-inquiry', (req: Request, res: Response, next) => {
   }
 
   const fromAddress = process.env.SMTP_FROM || process.env.SMTP_USER;
-  if (!mailTransport || !fromAddress) {
+  const hasSmtpUser = Boolean(process.env.SMTP_USER);
+  const hasSmtpPass = Boolean(process.env.SMTP_PASS);
+  if (!mailTransport || !fromAddress || hasSmtpUser !== hasSmtpPass) {
     return res.status(503).json({
       success: false,
       error: 'The project inquiry form is not configured to send email yet.',

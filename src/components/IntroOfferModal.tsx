@@ -26,6 +26,7 @@ export const IntroOfferModal: React.FC<IntroOfferModalProps> = ({
   const [notes, setNotes] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
   if (!isOpen) return null;
 
@@ -37,10 +38,11 @@ export const IntroOfferModal: React.FC<IntroOfferModalProps> = ({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError('');
     setSubmitting(true);
 
     try {
-      await fetch('/api/contact', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -53,11 +55,15 @@ export const IntroOfferModal: React.FC<IntroOfferModalProps> = ({
           message: `$0.99 Intro Offer request for ${roomType} (${style}). File attached: ${uploadedFileName || 'Will send via SMS/email'}. Notes: ${notes}`,
         }),
       });
+      const result = await response.json();
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || 'We could not submit your request. Please try again.');
+      }
 
       setSubmitted(true);
       onSuccess({ name, roomType, style });
-    } catch {
-      setSubmitted(true);
+    } catch (submitError) {
+      setError(submitError instanceof Error ? submitError.message : 'We could not submit your request. Please try again.');
     } finally {
       setSubmitting(false);
     }
@@ -115,6 +121,7 @@ export const IntroOfferModal: React.FC<IntroOfferModalProps> = ({
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="p-6 sm:p-8 space-y-5">
+            {error && <p className="border border-red-200 bg-red-50 p-3 text-sm text-red-700" role="alert">{error}</p>}
             <div className="bg-amber-50 border border-amber-200 p-4 text-xs text-slate-700 flex items-start gap-3">
               <DollarSign className="w-5 h-5 text-amber-700 shrink-0 mt-0.5" />
               <div>
