@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/social-media-promotion",
+      "destination": "/"
+    },
+    {
+      "source": "/cleaning-services",
+      "destination": "/"
+    },
+    {
+      "source": "/general-contracting-inquiry",
+      "destination": "/"
+    }
+  ]
+}
