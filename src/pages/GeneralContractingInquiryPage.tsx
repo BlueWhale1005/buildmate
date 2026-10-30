@@ -46,7 +46,7 @@ const copyByLanguage = {
     budgets: ['Under $10,000', '$10,000-$25,000', '$25,000-$50,000', '$50,000-$100,000', '$100,000+', 'Not sure yet'],
     upload: 'Add photos or project documents',
     uploadOptional: 'Optional',
-    uploadHelp: 'Attach site photos, blueprints, or inspiration images. Up to 3 files, 5 MB each. PDF, JPG, PNG, or WebP.',
+    uploadHelp: 'Attach site photos, blueprints, or inspiration images. Up to 3 files, 700 KB each. PDF, JPG, PNG, or WebP.',
     chooseFiles: 'Choose files',
     noFiles: 'No files selected',
     contactDetails: 'Your contact details',
@@ -60,7 +60,7 @@ const copyByLanguage = {
     formPrivacy: 'Your details are used to review this project inquiry and connect you with a relevant partner.',
     missingFields: 'Please complete all required fields.',
     tooManyFiles: 'Please attach no more than 3 files.',
-    oversizedFile: 'Each file must be 5 MB or smaller.',
+    oversizedFile: 'Each file must be 700 KB or smaller.',
     unsupportedFile: 'Use PDF, JPG, PNG, or WebP files.',
     successTitle: 'Your project inquiry has been submitted.',
     successText: 'We will review the details and look for a suitable general contracting partner. If there is a fit, a partner will contact you to discuss the project and next steps.',
@@ -111,7 +111,7 @@ const copyByLanguage = {
     budgets: ['Menos de $10,000', '$10,000-$25,000', '$25,000-$50,000', '$50,000-$100,000', '$100,000+', 'Aún no lo sé'],
     upload: 'Añada fotos o documentos del proyecto',
     uploadOptional: 'Opcional',
-    uploadHelp: 'Adjunte fotos del sitio, planos o imágenes de inspiración. Hasta 3 archivos de 5 MB cada uno. PDF, JPG, PNG o WebP.',
+    uploadHelp: 'Adjunte fotos del sitio, planos o imágenes de inspiración. Hasta 3 archivos de 700 KB cada uno. PDF, JPG, PNG o WebP.',
     chooseFiles: 'Elegir archivos',
     noFiles: 'No se seleccionaron archivos',
     contactDetails: 'Sus datos de contacto',
@@ -125,7 +125,7 @@ const copyByLanguage = {
     formPrivacy: 'Usaremos sus datos para revisar esta consulta y conectarle con un socio adecuado.',
     missingFields: 'Complete todos los campos obligatorios.',
     tooManyFiles: 'Adjunte un máximo de 3 archivos.',
-    oversizedFile: 'Cada archivo debe ser de 5 MB o menos.',
+    oversizedFile: 'Cada archivo debe ser de 700 KB o menos.',
     unsupportedFile: 'Use archivos PDF, JPG, PNG o WebP.',
     successTitle: 'Su consulta del proyecto fue enviada.',
     successText: 'Revisaremos los detalles y buscaremos un socio de contratación general adecuado. Si encontramos una opción, un socio se comunicará con usted para conversar sobre el proyecto y los siguientes pasos.',
@@ -151,7 +151,7 @@ const copyByLanguage = {
   },
 } as const;
 
-const MAX_FILE_SIZE = 5 * 1024 * 1024;
+const MAX_FILE_SIZE = 700 * 1024;
 const MAX_FILES = 3;
 const ACCEPTED_TYPES = new Set(['application/pdf', 'image/jpeg', 'image/png', 'image/webp']);
 

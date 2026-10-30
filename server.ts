@@ -3,8 +3,8 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 import { GoogleGenAI } from '@google/genai';
-import nodemailer from 'nodemailer';
 import multer from 'multer';
+import { inquiryEmailErrorStatus, sendInquiryEmail } from './src/server/graphMail.js';
 
 dotenv.config();
 
@@ -13,20 +13,9 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
-const contactEmail = process.env.CONTACT_EMAIL || 'Info@buildmateusa.com';
-const mailTransport = process.env.SMTP_HOST
-  ? nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT || 587),
-      secure: process.env.SMTP_SECURE === 'true',
-      auth: process.env.SMTP_USER && process.env.SMTP_PASS
-        ? { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS }
-        : undefined,
-    })
-  : null;
 const projectDocumentUpload = multer({
   storage: multer.memoryStorage(),
-  limits: { files: 3, fileSize: 5 * 1024 * 1024 },
+  limits: { files: 3, fileSize: 700 * 1024 },
   fileFilter: (_request, file, callback) => {
     const acceptedTypes = ['application/pdf', 'image/jpeg', 'image/png', 'image/webp'];
     if (!acceptedTypes.includes(file.mimetype)) {
@@ -59,21 +48,8 @@ app.post('/api/contact', async (req: Request, res: Response) => {
     });
   }
 
-  const fromAddress = process.env.SMTP_FROM || process.env.SMTP_USER;
-  const hasSmtpUser = Boolean(process.env.SMTP_USER);
-  const hasSmtpPass = Boolean(process.env.SMTP_PASS);
-  if (!mailTransport || !fromAddress || hasSmtpUser !== hasSmtpPass) {
-    return res.status(503).json({
-      success: false,
-      error: 'The contact form is not configured to send email yet.',
-    });
-  }
-
   try {
-    await mailTransport.sendMail({
-      from: fromAddress,
-      to: contactEmail,
-      ...(email ? { replyTo: email } : {}),
+    await sendInquiryEmail({
       subject: `BuildMate inquiry${serviceCategory ? `: ${serviceCategory}` : ''}`,
       text: [
         `Name: ${name}`,
@@ -89,7 +65,7 @@ app.post('/api/contact', async (req: Request, res: Response) => {
     return res.json({ success: true });
   } catch (error) {
     console.error('Contact email delivery failed:', error);
-    return res.status(502).json({
+    return res.status(inquiryEmailErrorStatus(error)).json({
       success: false,
       error: 'We could not send your message right now. Please email us directly.',
     });
@@ -137,21 +113,8 @@ app.post('/api/project-inquiry', (req: Request, res: Response, next) => {
     });
   }
 
-  const fromAddress = process.env.SMTP_FROM || process.env.SMTP_USER;
-  const hasSmtpUser = Boolean(process.env.SMTP_USER);
-  const hasSmtpPass = Boolean(process.env.SMTP_PASS);
-  if (!mailTransport || !fromAddress || hasSmtpUser !== hasSmtpPass) {
-    return res.status(503).json({
-      success: false,
-      error: 'The project inquiry form is not configured to send email yet.',
-    });
-  }
-
   try {
-    await mailTransport.sendMail({
-      from: fromAddress,
-      to: contactEmail,
-      replyTo: email,
+    await sendInquiryEmail({
       subject: `BuildMate general contracting inquiry: ${projectCategory}`,
       text: [
         `Name: ${name}`,
@@ -168,8 +131,9 @@ app.post('/api/project-inquiry', (req: Request, res: Response, next) => {
         '',
         `Attachments: ${documents.length ? documents.map((file) => file.originalname).join(', ') : 'None'}`,
       ].join('\n'),
+      replyTo: email,
       attachments: documents.map((file) => ({
-        filename: path.basename(file.originalname).replace(/[^\w.-]/g, '_'),
+        filename: file.originalname,
         content: file.buffer,
         contentType: file.mimetype,
       })),
@@ -178,7 +142,7 @@ app.post('/api/project-inquiry', (req: Request, res: Response, next) => {
     return res.json({ success: true });
   } catch (error) {
     console.error('Project inquiry email delivery failed:', error);
-    return res.status(502).json({
+    return res.status(inquiryEmailErrorStatus(error)).json({
       success: false,
       error: 'We could not send your project inquiry right now. Please contact BuildMate directly.',
     });
