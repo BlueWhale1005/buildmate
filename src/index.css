@@ -1,12 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  --paper: #f5f6f0;
-  --ink: #172522;
-  --green: #28624b;
-  --lime: #d9e96b;
-  --muted: #64716c;
-  --line: #d8dfd8;
+  --paper: #fffaf5;
+  --ink: #17191d;
+  --green: #272a2f;
+  --lime: #f97316;
+  --muted: #65615d;
+  --line: #e7ded5;
+}
+
+@theme {
+  --color-amber-50: #fff7ed;
+  --color-amber-100: #ffedd5;
+  --color-amber-200: #fed7aa;
+  --color-amber-300: #fdba74;
+  --color-amber-400: #fb923c;
+  --color-amber-500: #f97316;
+  --color-amber-600: #ea580c;
+  --color-amber-700: #c2410c;
+  --color-amber-800: #9a3412;
+  --color-amber-900: #7c2d12;
+  --color-amber-950: #431407;
 }
 
 @layer base {
@@ -28,10 +42,14 @@ body {
 }
 
 .section-eyebrow {
-  color: var(--green);
+  color: #c2410c;
   font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+.pricing-section .section-eyebrow {
+  color: var(--ink);
 }
 
 .section-eyebrow-light {

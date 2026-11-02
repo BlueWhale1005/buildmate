@@ -48,7 +48,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             ease: 'easeInOut',
             delay: 1.5,
           }}
-          className="absolute -bottom-24 right-0 w-[550px] h-[400px] bg-blue-100/60 blur-[130px] rounded-full"
+          className="absolute -bottom-24 right-0 w-[550px] h-[400px] bg-amber-100/60 blur-[130px] rounded-full"
         />
 
         {/* Subtle architectural grid pattern */}

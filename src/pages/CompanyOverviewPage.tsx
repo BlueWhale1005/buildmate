@@ -351,7 +351,7 @@ export const CompanyOverviewPage: React.FC<CompanyOverviewPageProps> = ({ langua
           </div>
         </section>
 
-        <section id="fees" className="scroll-mt-20 bg-[var(--lime)] px-5 py-16 sm:px-8 sm:py-20">
+        <section id="fees" className="pricing-section scroll-mt-20 bg-[var(--lime)] px-5 py-16 sm:px-8 sm:py-20">
           <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-[0.7fr_1fr] md:items-center">
             <div>
               <p className="section-eyebrow">{copy.feeEyebrow}</p>

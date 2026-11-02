@@ -76,9 +76,9 @@ export const DirectorySection: React.FC<DirectorySectionProps> = ({
             </button>
             <a
               href="tel:5514171825"
-              className="px-6 py-3 bg-blue-50 text-blue-900 border border-blue-200 hover:bg-blue-100 font-bold text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
+              className="px-6 py-3 bg-amber-50 text-amber-900 border border-amber-200 hover:bg-amber-100 font-bold text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
             >
-              <Phone className="w-3.5 h-3.5 text-blue-600" />
+              <Phone className="w-3.5 h-3.5 text-amber-700" />
               {t.helpCallBtn}
             </a>
           </div>
@@ -157,10 +157,10 @@ export const DirectorySection: React.FC<DirectorySectionProps> = ({
                   {/* Top card info */}
                   <div className="flex items-start justify-between gap-3 mb-4">
                     <div>
-                      <span className="text-[11px] font-bold text-blue-700 uppercase tracking-wider block mb-1">
+                      <span className="text-[11px] font-bold text-amber-700 uppercase tracking-wider block mb-1">
                         {c.trade}
                       </span>
-                      <h3 className="text-xl font-bold text-slate-950 leading-snug group-hover:text-blue-900 transition-colors">
+                      <h3 className="text-xl font-bold text-slate-950 leading-snug group-hover:text-amber-900 transition-colors">
                         {c.name}
                       </h3>
                     </div>
@@ -231,7 +231,7 @@ export const DirectorySection: React.FC<DirectorySectionProps> = ({
                 <div>
                   <div className="flex items-start justify-between mb-3">
                     <div>
-                      <span className="text-xs font-bold uppercase tracking-wider text-blue-700">
+                      <span className="text-xs font-bold uppercase tracking-wider text-amber-700">
                         {s.category}
                       </span>
                       <h3 className="text-2xl font-bold text-slate-950 mt-1">
@@ -245,8 +245,8 @@ export const DirectorySection: React.FC<DirectorySectionProps> = ({
                       <MapPin className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                       <span>{s.location}</span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-blue-800 font-medium">
-                      <Truck className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                    <div className="flex items-center gap-1.5 text-amber-900 font-medium">
+                      <Truck className="w-3.5 h-3.5 text-amber-700 shrink-0" />
                       <span>{s.deliveryAvailable}</span>
                     </div>
                   </div>
@@ -269,9 +269,9 @@ export const DirectorySection: React.FC<DirectorySectionProps> = ({
                   <span className="text-xs text-slate-500 font-medium">Trade Desk & Order Line:</span>
                   <a
                     href={`tel:${s.phone.replace(/[^0-9]/g, '')}`}
-                    className="font-bold text-sm text-slate-950 hover:text-blue-700 underline flex items-center gap-1"
+                    className="font-bold text-sm text-slate-950 hover:text-amber-700 underline flex items-center gap-1"
                   >
-                    <Phone className="w-3.5 h-3.5 text-blue-600" />
+                    <Phone className="w-3.5 h-3.5 text-amber-700" />
                     <span>{s.phone}</span>
                   </a>
                 </div>
