@@ -265,7 +265,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             className="px-4 py-2.5 rounded-lg bg-slate-950 hover:bg-slate-800 text-white text-xs font-bold transition-all flex items-center gap-2 cursor-pointer shadow-xs"
           >
             <Phone className="w-3.5 h-3.5 text-amber-400" />
-            <span>{language === 'es' ? 'Despacho Directo: (201) 555-0198' : 'Dispatch Desk: (201) 555-0198'}</span>
+            <span>{language === 'es' ? 'Despacho Directo: (551) 417-1825' : 'Dispatch Desk: (551) 417-1825'}</span>
           </button>
         </motion.div>
 

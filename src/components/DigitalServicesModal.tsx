@@ -169,10 +169,10 @@ export const DigitalServicesModal: React.FC<DigitalServicesModalProps> = ({
             <span>Need a custom solution or monthly marketing management?</span>
           </div>
           <a
-            href="tel:2015550198"
+            href="tel:5514171825"
             className="font-bold text-slate-900 hover:text-blue-700 underline"
           >
-            Call Us Directly: (201) 555-0198
+            Call Us Directly: (551) 417-1825
           </a>
         </div>
       </div>

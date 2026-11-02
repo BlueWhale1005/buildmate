@@ -110,11 +110,11 @@ export const Footer: React.FC<FooterProps> = ({
           <div className="md:col-span-4 space-y-3 text-sm text-slate-300">
             <div>
               <a
-                href="tel:2015550198"
+                href="tel:5514171825"
                 className="text-lg font-bold text-white hover:text-amber-400 transition-colors flex items-center gap-2"
               >
                 <Phone className="w-4 h-4 text-amber-400" />
-                <span>(201) 555-0198</span>
+                <span>(551) 417-1825</span>
               </a>
             </div>
 

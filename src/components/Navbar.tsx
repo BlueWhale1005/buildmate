@@ -111,7 +111,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             className="px-3.5 py-1.5 bg-slate-950 hover:bg-slate-800 text-white text-xs font-semibold rounded-full transition-colors flex items-center gap-1.5 cursor-pointer shadow-xs whitespace-nowrap"
           >
             <Phone className="w-3 h-3 text-amber-400" />
-            <span>(201) 555-0198</span>
+            <span>(551) 417-1825</span>
           </button>
         </div>
 
@@ -193,7 +193,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="w-full py-3 bg-slate-950 hover:bg-slate-800 text-white font-bold text-center text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
             >
               <Phone className="w-4 h-4 text-amber-400" />
-              <span>{language === 'es' ? 'Llamar a Despacho: (201) 555-0198' : 'Call Dispatch (201) 555-0198'}</span>
+              <span>{language === 'es' ? 'Llamar a Despacho: (551) 417-1825' : 'Call Dispatch (551) 417-1825'}</span>
             </button>
           </div>
         </div>

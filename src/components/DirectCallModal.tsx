@@ -52,10 +52,10 @@ export const DirectCallModal: React.FC<DirectCallModalProps> = ({
               {language === 'es' ? 'Número de Despacho BuildMate' : 'BuildMate Dispatch Number'}
             </div>
             <a
-              href="tel:2015550198"
+              href="tel:5514171825"
               className="text-3xl font-extrabold text-slate-950 hover:text-amber-600 block transition-colors tracking-tight"
             >
-              (201) 555-0198
+              (551) 417-1825
             </a>
             <div className="text-xs text-emerald-700 font-semibold flex items-center justify-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-emerald-600" />
@@ -64,7 +64,7 @@ export const DirectCallModal: React.FC<DirectCallModalProps> = ({
 
             <div className="pt-3">
               <a
-                href="tel:2015550198"
+                href="tel:5514171825"
                 className="w-full py-3.5 bg-slate-950 hover:bg-slate-800 text-white font-bold text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition-colors"
               >
                 <Phone className="w-4 h-4 text-amber-400" />

@@ -105,7 +105,7 @@ export const CleaningPage: React.FC<CleaningPageProps> = ({
               className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm tracking-wide transition-colors flex items-center gap-2 cursor-pointer"
             >
               <Phone className="w-4 h-4 text-amber-400" />
-              <span>(201) 555-0198</span>
+              <span>(551) 417-1825</span>
             </button>
           </div>
         </div>

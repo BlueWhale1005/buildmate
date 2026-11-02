@@ -196,7 +196,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
       description:
         'Connect directly with verified local cleaners and licensed contractors. Direct hiring, zero middleman fees, and $0.99 AI renovation previews.',
       contactBtn: 'Get a Free Quote',
-      callBtn: '(201) 555-0198',
+      callBtn: '(551) 417-1825',
       badge1: 'Verified Licenses & Background Checks',
       badge2: 'Direct Contractor Pay · $0.99 AI Previews',
     },
@@ -323,7 +323,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
       desc:
         'Browse vetted cleaning crews and licensed construction trades. Connect directly with zero platform fees.',
       joinBtn: 'Join Directory as a Pro',
-      helpCallBtn: 'Need Help Booking? (201) 555-0198',
+      helpCallBtn: 'Need Help Booking? (551) 417-1825',
       contractorsTab: 'Cleaners & Contractors',
       suppliersTab: 'Building & Cleaning Supplies',
       searchContractorPlaceholder: 'Search cleaning, remodeling, plumbing, electrical, painting...',
@@ -424,7 +424,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
       description:
         'Conecte directamente con personal de limpieza verificado y contratistas con licencia. Cotizaciones directas sin intermediarios y vistas previas de remodelación con IA por $0.99.',
       contactBtn: 'Cotizar o Reservar',
-      callBtn: '(201) 555-0198',
+      callBtn: '(551) 417-1825',
       badge1: 'Profesionales Verificados · Pago Directo',
       badge2: 'Limpieza, Construcción y $0.99 AI Previews',
     },
@@ -551,7 +551,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
       desc:
         'Explore especialistas en limpieza y oficios de la construcción con licencia. Trato directo sin comisiones.',
       joinBtn: 'Unirse a la Red',
-      helpCallBtn: '¿Necesita Ayuda? Llame al (201) 555-0198',
+      helpCallBtn: '¿Necesita Ayuda? Llame al (551) 417-1825',
       contractorsTab: 'Limpieza y Contratistas',
       suppliersTab: 'Proveedores y Materiales',
       searchContractorPlaceholder: 'Buscar limpieza, remodelación, plomería, electricidad, pintura...',

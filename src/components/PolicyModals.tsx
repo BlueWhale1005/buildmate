@@ -52,7 +52,7 @@ export const PolicyModals: React.FC<PolicyModalProps> = ({ type, language, onClo
                 </p>
                 <h4 className="font-bold text-slate-900">Contacto</h4>
                 <p>
-                  Para consultas sobre privacidad o eliminación de datos, escríbanos a <em>Info@buildmateusa.com</em> o llame al <em>(201) 555-0198</em>.
+                  Para consultas sobre privacidad o eliminación de datos, escríbanos a <em>Info@buildmateusa.com</em> o llame al <em>(551) 417-1825</em>.
                 </p>
               </>
             ) : (
@@ -70,7 +70,7 @@ export const PolicyModals: React.FC<PolicyModalProps> = ({ type, language, onClo
                 </p>
                 <h4 className="font-bold text-slate-900">Contact Us</h4>
                 <p>
-                  For questions regarding data privacy or to request removal of your details, please email us directly at <em>Info@buildmateusa.com</em> or call <em>(201) 555-0198</em>.
+                  For questions regarding data privacy or to request removal of your details, please email us directly at <em>Info@buildmateusa.com</em> or call <em>(551) 417-1825</em>.
                 </p>
               </>
             )
@@ -89,7 +89,7 @@ export const PolicyModals: React.FC<PolicyModalProps> = ({ type, language, onClo
                 </p>
                 <h4 className="font-bold text-slate-900">Asistencia Telefónica Directa</h4>
                 <p>
-                  Si experimenta alguna dificultad para acceder al sitio, comuníquese directamente con nuestro equipo de despacho al <strong>(201) 555-0198</strong>. Con gusto le atenderemos por teléfono para presupuestos, servicios y visualizaciones en 3D.
+                  Si experimenta alguna dificultad para acceder al sitio, comuníquese directamente con nuestro equipo de despacho al <strong>(551) 417-1825</strong>. Con gusto le atenderemos por teléfono para presupuestos, servicios y visualizaciones en 3D.
                 </p>
               </>
             ) : (
@@ -106,7 +106,7 @@ export const PolicyModals: React.FC<PolicyModalProps> = ({ type, language, onClo
                 </p>
                 <h4 className="font-bold text-slate-900">Direct Telephone Assistance</h4>
                 <p>
-                  If you experience any difficulty accessing any portion of this website, please call our management team directly at <strong>(201) 555-0198</strong>. We will happily assist you over the phone with quotes, service referrals, and AI visual previews.
+                  If you experience any difficulty accessing any portion of this website, please call our management team directly at <strong>(551) 417-1825</strong>. We will happily assist you over the phone with quotes, service referrals, and AI visual previews.
                 </p>
               </>
             )

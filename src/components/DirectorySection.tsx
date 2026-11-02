@@ -75,7 +75,7 @@ export const DirectorySection: React.FC<DirectorySectionProps> = ({
               {t.joinBtn}
             </button>
             <a
-              href="tel:2015550198"
+              href="tel:5514171825"
               className="px-6 py-3 bg-blue-50 text-blue-900 border border-blue-200 hover:bg-blue-100 font-bold text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
             >
               <Phone className="w-3.5 h-3.5 text-blue-600" />

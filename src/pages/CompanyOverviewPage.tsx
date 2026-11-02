@@ -382,9 +382,9 @@ export const CompanyOverviewPage: React.FC<CompanyOverviewPageProps> = ({ langua
               <p className="mt-5 max-w-lg text-base leading-7 text-white/70">{copy.contactIntro}</p>
 
               <div className="mt-9 space-y-4 border-t border-white/20 pt-6">
-                <a href="tel:2015550198" className="flex items-center gap-4 text-sm font-semibold transition-colors hover:text-[var(--lime)]">
+                <a href="tel:5514171825" className="flex items-center gap-4 text-sm font-semibold transition-colors hover:text-[var(--lime)]">
                   <span className="grid h-10 w-10 place-items-center border border-white/25"><Phone size={17} /></span>
-                  <span><span className="block text-xs font-medium text-white/55">{copy.phoneCta}</span>(201) 555-0198</span>
+                  <span><span className="block text-xs font-medium text-white/55">{copy.phoneCta}</span>(551) 417-1825</span>
                 </a>
                 <a href="mailto:Info@buildmateusa.com" className="flex items-center gap-4 text-sm font-semibold transition-colors hover:text-[var(--lime)]">
                   <span className="grid h-10 w-10 place-items-center border border-white/25"><Mail size={17} /></span>

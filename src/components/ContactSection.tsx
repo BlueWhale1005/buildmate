@@ -78,7 +78,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ language, initia
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
           {/* Card 1: Direct Phone */}
           <a
-            href="tel:2015550198"
+            href="tel:5514171825"
             className="group bg-white p-5 border border-slate-200 hover:border-amber-400 hover:shadow-md transition-all flex items-start gap-4"
           >
             <div className="w-10 h-10 rounded-lg bg-amber-50 group-hover:bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 transition-colors">
@@ -89,7 +89,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ language, initia
                 {language === 'es' ? 'Llamada Directa' : 'Direct Dispatch'}
               </div>
               <div className="text-base font-bold text-slate-950 group-hover:text-amber-700 transition-colors">
-                (201) 555-0198
+                (551) 417-1825
               </div>
               <div className="text-xs text-slate-500 mt-0.5">
                 {language === 'es' ? 'Lun–Sáb 7am–7pm · 24/7 Emergencias' : 'Mon–Sat 7am–7pm · 24/7 Emergency'}
@@ -172,11 +172,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ language, initia
 
                 <div className="pt-3 border-t border-emerald-100 flex flex-col sm:flex-row items-center justify-center gap-3">
                   <a
-                    href="tel:2015550198"
+                    href="tel:5514171825"
                     className="px-5 py-2.5 bg-slate-950 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition-colors"
                   >
                     <Phone className="w-3.5 h-3.5 text-amber-400" />
-                    <span>{language === 'es' ? 'Llamar Directo: (201) 555-0198' : 'Call Direct: (201) 555-0198'}</span>
+                    <span>{language === 'es' ? 'Llamar Directo: (551) 417-1825' : 'Call Direct: (551) 417-1825'}</span>
                   </a>
                   <button
                     type="button"
@@ -377,11 +377,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ language, initia
                   : 'For urgent cleaning, emergency trade visits, or same-day turnarounds, call directly.'}
               </p>
               <a
-                href="tel:2015550198"
+                href="tel:5514171825"
                 className="w-full py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
               >
                 <Phone className="w-3.5 h-3.5" />
-                <span>(201) 555-0198</span>
+                <span>(551) 417-1825</span>
               </a>
             </div>
 

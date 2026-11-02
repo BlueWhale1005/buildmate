@@ -66,7 +66,7 @@ export const Hero: React.FC<HeroProps> = ({ language, onContactClick }) => {
             </button>
 
             <a
-              href="tel:2015550198"
+              href="tel:5514171825"
               className="inline-flex items-center gap-2 px-5 py-3.5 bg-slate-100 hover:bg-slate-200 text-slate-900 font-semibold rounded-md text-base transition-colors cursor-pointer"
             >
               <Phone className="w-4 h-4 text-slate-700" />
