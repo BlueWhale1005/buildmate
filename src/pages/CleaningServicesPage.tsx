@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { Language } from '../i18n/translations';
 import { LanguageSwitch } from '../components/LanguageSwitch';
+import { BrandMark } from '../components/BrandMark';
 import cleaningImage from '../assets/images/pro_cleaning_service_1791501759015.jpg';
 
 const copyByLanguage = {
@@ -146,7 +147,7 @@ export const CleaningServicesPage: React.FC<CleaningServicesPageProps> = ({ lang
       <header className="sticky top-0 z-40 border-b border-[var(--line)] bg-[var(--paper)]/95 backdrop-blur">
         <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-3 px-5 sm:px-8">
           <a href="/" className="flex shrink-0 items-center gap-2.5" aria-label="BuildMate home">
-            <span className="grid h-9 w-9 place-items-center bg-[var(--green)] font-heading text-lg font-bold text-white">B</span>
+            <BrandMark className="h-9 w-9" />
             <span className="font-heading text-xl font-bold">Build<span className="text-[var(--green)]">Mate</span></span>
           </a>
           <div className="flex items-center gap-2 sm:gap-6">
@@ -291,7 +292,10 @@ export const CleaningServicesPage: React.FC<CleaningServicesPageProps> = ({ lang
 
       <footer className="bg-[var(--paper)] px-5 py-7 sm:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 text-xs text-[var(--muted)] sm:flex-row sm:items-center sm:justify-between">
-          <a href="/" className="font-heading text-base font-bold text-[var(--ink)]">Build<span className="text-[var(--green)]">Mate</span></a>
+          <a href="/" className="inline-flex items-center gap-2 font-heading text-base font-bold text-[var(--ink)]">
+            <BrandMark className="h-8 w-8" />
+            Build<span className="text-[var(--green)]">Mate</span>
+          </a>
           <p>{copy.footer}</p>
           <p>{copy.rights}</p>
         </div>

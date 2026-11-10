@@ -2,6 +2,7 @@ import React from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { Language, TRANSLATIONS } from '../i18n/translations';
 import { PageRoute } from '../types/routes';
+import { BrandMark } from './BrandMark';
 
 interface FooterProps {
   language: Language;
@@ -30,9 +31,7 @@ export const Footer: React.FC<FooterProps> = ({
               onClick={() => onNavigate('home')}
               className="flex items-center gap-2.5 mb-2 cursor-pointer inline-flex"
             >
-              <div className="w-8 h-8 rounded-md bg-amber-500 text-slate-950 flex items-center justify-center font-black text-base">
-                B
-              </div>
+              <BrandMark className="h-8 w-8" />
               <h3 className="text-2xl font-black tracking-tight text-white">
                 Build<span className="text-amber-500">Mate</span>
               </h3>

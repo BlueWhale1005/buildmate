@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Menu, X, Globe, Phone } from 'lucide-react';
 import { Language, TRANSLATIONS } from '../i18n/translations';
 import { PageRoute } from '../types/routes';
+import { BrandMark } from './BrandMark';
 
 interface NavbarProps {
   currentRoute: PageRoute;
@@ -46,9 +47,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           onClick={() => handleNav('home')}
           className="cursor-pointer group shrink-0 flex items-center gap-2"
         >
-          <div className="w-8 h-8 rounded-md bg-slate-950 text-white flex items-center justify-center font-heading font-black text-base shadow-xs group-hover:bg-amber-600 transition-colors">
-            B
-          </div>
+          <BrandMark className="h-8 w-8" />
           <span className="font-heading text-xl sm:text-2xl font-black tracking-tight text-slate-950 transition-colors whitespace-nowrap">
             Build<span className="text-amber-600">Mate</span>
           </span>

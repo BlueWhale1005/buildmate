@@ -17,6 +17,7 @@ import marketingImage from '../assets/images/digital_small_business_179150177769
 import cleaningImage from '../assets/images/pro_cleaning_service_1791501759015.jpg';
 import constructionImage from '../assets/images/hero_construction_1791499952212.jpg';
 import { LanguageSwitch } from '../components/LanguageSwitch';
+import { BrandMark } from '../components/BrandMark';
 
 type ContactForm = {
   name: string;
@@ -234,7 +235,7 @@ export const CompanyOverviewPage: React.FC<CompanyOverviewPageProps> = ({ langua
       <header className="sticky top-0 z-40 border-b border-[var(--line)] bg-[var(--paper)]/95 backdrop-blur">
         <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 sm:px-8">
           <a href="#top" className="flex items-center gap-2.5" aria-label="BuildMate home">
-            <span className="grid h-9 w-9 place-items-center bg-[var(--green)] font-heading text-lg font-bold text-white">B</span>
+            <BrandMark className="h-9 w-9" />
             <span className="font-heading text-xl font-bold">Build<span className="text-[var(--green)]">Mate</span></span>
           </a>
 
@@ -444,7 +445,10 @@ export const CompanyOverviewPage: React.FC<CompanyOverviewPageProps> = ({ langua
 
       <footer className="bg-[var(--paper)] px-5 py-7 sm:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 text-xs text-[var(--muted)] sm:flex-row sm:items-center sm:justify-between">
-          <a href="#top" className="font-heading text-base font-bold text-[var(--ink)]">Build<span className="text-[var(--green)]">Mate</span></a>
+          <a href="#top" className="inline-flex items-center gap-2 font-heading text-base font-bold text-[var(--ink)]">
+            <BrandMark className="h-8 w-8" />
+            Build<span className="text-[var(--green)]">Mate</span>
+          </a>
           <p>{copy.footerText}</p>
           <p>{copy.rights}</p>
         </div>
