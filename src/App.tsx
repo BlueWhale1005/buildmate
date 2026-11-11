@@ -20,7 +20,7 @@ function getInitialLanguage(): Language {
 
 export default function App() {
   const [language, setLanguage] = useState<Language>(getInitialLanguage);
-  const isSocialPromotionPage = window.location.pathname.replace(/\/+$/, '') === '/social-media-promotion';
+  const isSocialPromotionPage = window.location.pathname.replace(/\/+$/, '') === '/socialmediapromotion';
   const isCleaningServicesPage = window.location.pathname.replace(/\/+$/, '') === '/cleaning-services';
   const isGeneralContractingInquiryPage = window.location.pathname.replace(/\/+$/, '') === '/general-contracting-inquiry';
 
